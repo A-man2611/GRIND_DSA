@@ -2,7 +2,6 @@
 // second wif conditional will check whether the 1st letter in the second string is present
 // if not it will store with respect to index value or if found then it will show as the last value hence failing third if 
 
-
 #include<iostream>
 #include<string>
 #include<algorithm>
