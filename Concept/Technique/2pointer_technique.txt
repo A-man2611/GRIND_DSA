@@ -1,0 +1,100 @@
+/** 1. Converging Pointer (Two Pointer Technique)
+
+The Converging Pointer technique is a common pattern in the two-pointer approach.
+It involves initializing two pointers at different ends of a data structure (like an array or string)
+and moving them towards each other (converging) based on certain conditions.
+
+Key Points:
+- Initialization:
+    - One pointer starts at the beginning (left = 0).
+    - The other starts at the end (right = n-1).
+- Movement:
+    - Pointers move towards each other (e.g., left++, right--) depending on the logic
+      (such as sum comparison, palindrome check, etc.).
+- Use Cases:
+    - Checking for palindromes.
+    - Finding pairs with a given sum in a sorted array.
+    - Partitioning arrays.
+- Advantages:
+    - Reduces time complexity compared to nested loops.
+    - Efficient for problems involving sorted data or symmetrical checks.
+**/
+
+// ...................................................xxxxxxxx...........................
+// ...................................................xxxxxxxx...........................
+// ...................................................xxxxxxxx...........................
+
+/** 2. Parallel Pointer (Two Pointer Technique)
+
+The Parallel Pointer technique is another common pattern in the two-pointer approach.
+In this technique, both pointers start from the same end (usually the beginning) of a data structure
+and move forward independently or together based on certain conditions.
+
+Key Points:
+- Initialization:
+    - Both pointers typically start at the beginning (left = 0, right = 0).
+- Movement:
+    - Pointers move forward independently or together (e.g., left++, right++) depending on the logic
+      (such as skipping duplicates, merging arrays, or finding subarrays).
+- Use Cases:
+    - Removing duplicates from a sorted array.
+    - Merging two sorted arrays.
+    - Finding subarrays with a given sum.
+- Advantages:
+    - Efficient for problems involving traversal, merging, or comparison of elements.
+    - Reduces unnecessary iterations compared to nested loops.
+
+Example: Removing duplicates from a sorted array
+int left = 0;
+for (int right = 1; right < n; right++) {
+    if (arr[right] != arr[left]) {
+        left++;
+        arr[left] = arr[right];
+    }
+}
+// The array from index 0 to left contains unique elements.
+
+Summary:
+The parallel pointer technique is useful for problems where you need to process or compare elements
+in a single pass from the same end of the data **/
+
+// ...................................................xxxxxxxx...........................
+// ...................................................xxxxxxxx...........................
+// ...................................................xxxxxxxx...........................
+
+/** 3. Triggered Pointer (Two Pointer Technique)
+
+The Triggered Pointer technique is a variation of the two-pointer approach where one pointer moves continuously,
+while the other pointer is "triggered" to move only when a specific condition is met. This is useful for problems
+where you need to maintain a window or segment that satisfies certain constraints.
+
+Key Points:
+- Initialization:
+    - Both pointers typically start at the beginning (left = 0, right = 0).
+- Movement:
+    - The right pointer moves forward in each iteration.
+    - The left pointer moves forward only when a certain condition is triggered (e.g., the window becomes invalid).
+- Use Cases:
+    - Finding the smallest/largest subarray with a given property.
+    - Sliding window problems (e.g., minimum window substring, longest substring without repeating characters).
+    - Maintaining a dynamic window or segment.
+- Advantages:
+    - Efficient for problems requiring dynamic window size.
+    - Avoids unnecessary computations by adjusting the window only when needed.
+
+Example: Finding the length of the longest substring without repeating characters
+int left = 0;
+unordered_map<char, int> seen;
+int maxLen = 0;
+for (int right = 0; right < s.length(); right++) {
+    if (seen.count(s[right]) && seen[s[right]] >= left) {
+        left = seen[s[right]] + 1; // Trigger left pointer to move past the duplicate
+    }
+    seen[s[right]] = right;
+    maxLen = max(maxLen, right - left + 1);
+}
+// maxLen contains the length of the longest substring without repeating characters.
+
+Summary:
+The triggered pointer technique is powerful for problems where you need to dynamically adjust a window or segment
+based on certain triggers or constraints.
