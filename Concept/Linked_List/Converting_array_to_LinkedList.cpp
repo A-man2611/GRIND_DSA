@@ -3,6 +3,13 @@
 
 using namespace std;
 
+// | Line                             | Meaning                                 |
+// | -------------------------------- | --------------------------------------- |
+// | `Node* temp = new Node(arr[i]);` | Creates a new node with `arr[i]`        |
+// | `mover->next = temp;`            | Connects current node to the new node   |
+// | `mover = temp;`                  | Advances the mover to the new last node |
+
+
 class Node{
     public:
         int data;
@@ -18,6 +25,7 @@ class Node{
             next = nullptr;
         }
         //it will be node pointer because in the it will return pointer that will always point to head.
+        //static is done becuse you need to make it available for scope in main.ß
         static Node* convertarr2LL(vector<int> &arr){
             Node* head = new Node(arr[0]);
             Node* mover = head;
