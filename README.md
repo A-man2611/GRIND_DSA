@@ -7,7 +7,7 @@ This repository is designed for **interview preparation**, **competitive program
 
 ## **Features**
 - 📂 **Organized by Topics:** Arrays, Strings, Linked Lists, Trees, Graphs, Dynamic Programming, and more.
-- 🔥 **LeetCode & CodeChef Problems:** Includes solutions with both brute-force and optimal approaches.
+- 🔥 **LeetCode & CodeChef(Future) Problems:** Includes solutions with both brute-force and optimal approaches.
 - 📝 **Line-by-line Comments:** Every solution is explained in detail for better understanding.
 - ⚡ **Efficient Implementations:** Focus on time complexity and space optimization.
 
